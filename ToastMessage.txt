@@ -1,0 +1,32 @@
+import React, { Component } from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+import Toast from "react-native-toast-message";
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  showToast = () => {
+    Toast.show({
+      type: "success",
+      text1: "Hello",
+      text2: "This is some something 👋",
+    });
+  };
+
+  render() {
+    return (
+      <View style={{ flex: 1 }}>
+        <Text>Hello World</Text>
+        <TouchableOpacity onPress={() => this.showToast()}>
+          <Text>Press Toast</Text>
+        </TouchableOpacity>
+        <Toast />
+      </View>
+    );
+  }
+}
+
+export default App;

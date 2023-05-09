@@ -1,0 +1,30 @@
+import React, { Component } from "react";
+import { View, Text, TouchableOpacity, StatusBar } from "react-native";
+import LinearGradient from "react-native-linear-gradient";
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  render() {
+    return (
+      <LinearGradient
+        colors={["#12c2e9", "#c471ed", "#f64f59"]}
+        style={{ flex: 1 }}
+        useAngle={true}
+        angle={50}
+        angleCenter={{ x: 0.3, y: 0.7 }}
+      >
+        <View style={{ flex: 1 }}>
+          <StatusBar backgroundColor="transparent" translucent />
+          <Text style={{ color: "#fff", marginTop: 50 }}>
+            Sign in with Facebook
+          </Text>
+        </View>
+      </LinearGradient>
+    );
+  }
+}
+
+export default App;

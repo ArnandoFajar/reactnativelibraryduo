@@ -1,0 +1,40 @@
+import React, { Component } from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+import Snackbar from "react-native-snackbar";
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  showNotification = () => {
+    Snackbar.show({
+      text:
+        "Hello world hello World Hello World Hello World Hello world hello World Hello World Hello World Hello world hello World Hello World Hello World Hello world hello World Hello World Hello World ",
+      duration: Snackbar.LENGTH_INDEFINITE,
+      numberOfLines: 5,
+      textColor: "#ff0000",
+      backgroundColor: "#fffdd",
+      action: {
+        text: "Show",
+        textColor: "green",
+        onPress: () => {
+          console.log("click Undo");
+        },
+      },
+    });
+  };
+
+  render() {
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <TouchableOpacity onPress={() => this.showNotification()}>
+          <Text>Hello World</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
+}
+
+export default App;
